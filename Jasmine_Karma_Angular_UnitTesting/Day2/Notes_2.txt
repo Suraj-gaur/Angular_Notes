@@ -1,0 +1,51 @@
+Testing Services, Pipes and Http Calls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.  Testing Pipes   (Isolated testing)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ng  test    --include  "src/app/gender.pipe.spec.ts"
+
+
+---> We need to test the transform method input and output.
+---> Write separate test cases for possible inputs.
+			Eg:			a.    m --	male
+							b.    f --	female
+							c.    M/F   ----   male/female 
+							
+---> Write separate test cases for invalid input. 
+
+
+
+
+
+
+2. Testing Services   (Isolated testing)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--> Testing the services without dependencies.
+--> Test object creation for the service.
+--> Test the props and methods.
+
+
+
+
+3. Testing Services   (with dependencies)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--> Testing the services with  dependencies.
+
+Eg:  
+			CalculatorService is depends on LogService
+			DataService is depends on HttpClient
+	
+--> CalculatorService is depends on LogService
+
+
+			
+
+Using Jasmine Spies in Angular Testing to mocking the dependencies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--> Jasmine spies are used to track or stub functions or methods. 
+--> Spies are a way to check if a function was called or to provide a custom return value. 
+
+--> We can use spies to test components/services that depend on service and avoid actually calling the service’s methods to get a value. 

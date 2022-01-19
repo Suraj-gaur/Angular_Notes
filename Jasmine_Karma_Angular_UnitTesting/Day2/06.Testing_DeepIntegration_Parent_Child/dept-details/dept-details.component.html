@@ -1,0 +1,20 @@
+<style>
+  .c1
+  {
+      border: 1px solid gray;
+      border-radius : 10px;
+      width : 150px;
+      padding : 5px;
+      text-align: center;
+      float: left;
+      margin: 5px;
+      box-shadow: 5px 5px 2px black;
+  }
+</style>
+
+<div  class="c1">
+  <h3 style="margin: 2px;color:Red;"> {{deptObj.dname}} </h3>
+  <u> Deptno :   {{deptObj.deptno}} </u>  <br/>
+  Location : <span style="color:Green;"> {{deptObj.loc}} </span>   <br/>
+  <a href="javascript:void(0)"  (click)="deptRemove_child()">Remove</a>
+</div>
