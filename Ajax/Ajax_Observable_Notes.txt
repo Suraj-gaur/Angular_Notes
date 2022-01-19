@@ -1,0 +1,103 @@
+AJAX
+
+	-->  Asynchronous Javascript And Xml 
+		
+	
+	Normal :		one  	two 		three
+	Async:		
+						one      three 	two 	(default)
+						
+						one      two  	three
+							
+						 
+						
+	
+		1. 	console.log("one");
+		2.     async  calls  ---  callbacks	
+						--- 	console.log("two");		
+						---	dependent statements						
+		3. 	console.log("three");
+	
+	
+	
+What is the concept of promises in javascript? 
+Why do we use promises?	
+		
+		
+
+A promise is an object that may produce a single value some time in the future: 
+		either a resolved value, 
+		or a reason that it’s not resolved (e.g., a network error occurred). 
+		
+A promise may be in one of 3 possible states: 
+			a.  fulfilled
+			b. rejected, 
+			c. pending. 
+
+Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+
+	When the executing code obtains the result, it should call one of the two callbacks:
+
+	myPromise.then(fullfilledCallback, errorCallback);
+	
+	
+	Eg:		myPromise.then(
+					(value) =>  {console.log(value);},			
+					(error) =>   {console.log(error);}
+				);
+				
+------------------------------------------------------------------------------------------------------------
+
+
+-->	Async calls
+-->	Promises to handle these async calls 				
+
+
+
+-->   Observables
+			-- can handle stream of data / multiple values 
+			-- making ajax calls / http calls in angular
+			-- It can cancellable
+			-- lazy loading :  start only when somebody uses observable (subscribing)
+			-- apply serveral operators on top of observable results			
+			-- angular uses observable to handle server calls (ajax calls)
+			
+			Required Library:    
+					RxJS 	--		(Reactive Programming of JavaScript)
+					
+					
+			What is RxJS?
+				-->  It is javascript library for implementing Reactive Programming in JavaScript.
+				
+				--> It can be help us to develop ajax calls using observables.
+
+
+Points:	
+	   
+1.  AJAX Calls
+2.  promises
+3.  Observables
+4.  RxJS
+4.  Angular HTTP Calls
+
+			---> HttpClient	---		Observables	(RxJS library)
+
+
+
+
+observableObj.subscribe(
+      (result:any) =>  {    console.log(result);   },
+      (error:any) =>  {    console.log(error);   }
+      );
+	  
+	  
+
+usage  subscribe()
+~~~~~~~~~~~~~~
+	--  This method is used to handle the results that comes from observable.
+	--- this method expecting following parameters:
+
+		a. success callback 			---		required
+		b. error callback 					---		optional
+		c. complete callback 			---		optional
+		

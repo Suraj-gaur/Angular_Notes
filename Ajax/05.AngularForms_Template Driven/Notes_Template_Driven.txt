@@ -1,0 +1,55 @@
+			Working with Forms in Angular
+			~~~~~~~~~~~~~~~~~~~~~~~~~~
+-> According to HTML, Form is a collection of input fields.
+
+-> Form is used to read the data from the user.
+
+-> Browser submits the request to server  based on <form> tag.
+
+-> At the time of submitting the data to server, we need to perform validations.
+
+-> Angular  provides pre-defined directives and objects, properties to perform validations.
+
+-> Angular Forms can be implemented in two ways:
+		1. Template Driven 
+		2.  Model Driven  (Reactive Forms)
+		
+		
+Template Driven
+~~~~~~~~~~~~~~
+-> In Template Driven approach, most of the validation required settings are specified in template file (*.html).
+
+->In this approach we need to depends on template variables concept.
+
+-> We need to created template variables for <form> and <input/>  tags.
+
+
+Validation directives in Angular
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. required
+2. minlength
+3. maxlength
+4. pattern
+5. email
+------------------------------------------------------------------
+
+
+
+Steps to implement
+~~~~~~~~~~~~~~~~
+1. Create Template variable for form tag
+		<form   #form1=“ngForm”>
+
+2. Create Template variable for input tag
+		<input  #firstName="ngModel">
+		
+3. Apply Validation directives
+		<input  #firstName="ngModel"  required="true"  />		
+
+4. Prepare error message  *ngIf -  invalid, dirty
+
+		<span  class="error" *ngIf="firstName.invalid  && firstName.dirty">First Name is required</span>
+
+5. Apply disabled prop for  submit button	 - invalid
+
+	  <input type="submit"  [disabled]="form1.invalid"  value="Register"     />

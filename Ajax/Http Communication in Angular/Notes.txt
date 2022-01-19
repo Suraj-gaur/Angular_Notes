@@ -1,0 +1,39 @@
+
+HTTP Communication in Angular
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Steps
+~~~~~
+1. Import HttpClientModule in App.module.ts
+		--- under imports section
+		
+2. Inject HttpClient service in other items(component,  services,..) in angular application	
+
+
+	import  {HttpClient}  from '@angular/common/http';
+
+	constructor( private  httpObj:HttpClient )
+	{
+		
+	}
+
+
+3. Perform operations  using HttpClient methods:
+
+		a.  get()			---			Read
+		b.  post()			---			Create
+		c.  put()			---			Update
+		d. delete()		---			Delete
+		
+	
+	Note: all the above methods returns observable object.
+				
+				
+Usage:
+			let url = "";			
+			
+			this.httpObj.get(url).subscribe( (result:any) => 
+			{
+					// code to handle the result that comes from server					
+			});

@@ -1,0 +1,32 @@
+<h3>CRUD Operations on  Server Data (json-server as backend)</h3>
+<hr/>
+
+<input type="text" [disabled]="isDisabled"  [(ngModel)]="deptno"  placeholder="Deptno"  />
+<input type="text"  [(ngModel)]="dname"  placeholder="Dname"  />
+<input type="text"  [(ngModel)]="loc"  placeholder="Location"  />
+<hr/>
+
+<input type="button"  value="Get Depts" (click)="getDepts_click()"  />
+<input type="button"  value="Add Dept" (click)="addDept_click()"  />
+<input type="button"  value="Update Dept" (click)="updateDept_click()"  />
+<br/><br/>
+
+<table border="2" cellspacing="0"  cellpadding="5" width="600">
+<tr>
+      <th>Dept Number</th>
+      <th>Dept Name</th>
+      <th>Dept Location</th>
+      <th> </th>
+</tr>
+
+<tr *ngFor="let dept of deptsArray">
+    <td> {{dept.deptno}} </td>
+    <td> {{dept.dname}} </td>
+    <td> {{dept.loc}} </td>
+    <td>
+        <a  href="javascript:void(0);"  (click)="selectDept_click( dept.deptno  )">Select</a> |
+        <a  href="javascript:void(0);"  (click)="removeDept_click( dept.deptno  )">Remove</a>
+    </td>
+</tr>
+
+</table>

@@ -1,0 +1,21 @@
+import { Component } from '@angular/core';
+import { Observable, of, Subject } from 'rxjs';
+
+@Component({
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
+})
+export class DemoComponent
+{
+  getData()
+  {
+    let observableObj =  of(1,2,3,4,5);
+
+    observableObj.subscribe( (result) =>
+    {
+      console.log("data from observable : " + result);
+    } );
+
+  }
+}

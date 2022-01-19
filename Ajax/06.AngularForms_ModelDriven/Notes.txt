@@ -1,0 +1,32 @@
+					Reactive Forms in Angular
+					~~~~~~~~~~~~~~~~~~~~~~			
+-> Model driven Forms are also called as Reactive Forms. 
+
+-> It is completely based on component logic.
+
+-> In reactive forms you declare all of your fields and validation in component class  and then we can link-up with HTML template. 
+
+-> We need to use FormGroup and FormControl class to prepare form fields.
+
+-> We have more controlling on validation logic.
+
+-> It is more comfortable for perform unit testing on validations. Test automation also easy with reactive forms.
+
+Note:
+-> We need to import ReactiveFormsModule in Application Module.
+
+-> Classes Involved in component to define validations:
+		1. FormGroup
+		2. FormControl
+		3. Validators		
+-----------------------------------------------------------
+
+Creating Forms in TS file:
+
+  customerForm : FormGroup = new FormGroup({
+    fname :  new FormControl('', Validators.required),
+    lname :  new FormControl('', Validators.required),
+    city :  new FormControl('',  [Validators.minLength(3), Validators.maxLength(10)]),
+    email :  new FormControl('', Validators.email),
+    pincode :  new FormControl('', Validators.pattern("\\d{6}")),
+  });

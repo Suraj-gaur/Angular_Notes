@@ -1,0 +1,56 @@
+Working with Http Interceptors
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Adding Authorization token for particular request
+	
+	const hardcodedToken = '1d38d128-0671-4121-8084-f6332a992a40';
+    const header = { 'Authorization'  `Bearer ${hardcodedToken}`};    
+	return this.httpObj.getany[](this.url, { headers header});
+	return this.httpObj.postany(this.url, dataObj, { headers header});
+	
+--------------------------------------------------------------------------------
+
+Requirement     Adding  Authorization token for all requests in the application.
+
+Solution   HttpInterceptor  concept
+
+
+How to implement
+
+Stpes to create custom HTTP Interceptors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Create custom http interceptor service class
+
+	ng  g   s   CustomHttpInterceptor
+
+
+2. Implement HttpInterceptor interface
+				---  Intercept()  method				
+				
+	@Injectable()
+	export class CustomHttpInterceptor implements HttpInterceptor 
+	{
+		intercept(req HttpRequestany, next HttpHandler) 		ObservableHttpEventany 
+		{
+		    code to intercept the request	
+       		return next.handle(req);
+		}
+}
+	
+				
+				
+3. Register the interceptor to the root application injector
+
+
+@NgModule({
+  declarations [  AppComponent  ],
+  imports [
+    BrowserModule,  HttpClientModule
+  ],
+  providers [
+    			{provide  HTTP_INTERCEPTORS, useClass CustomHttpInterceptor, multitrue}
+  ],
+  bootstrap [AppComponent]
+})
+export class AppModule { }

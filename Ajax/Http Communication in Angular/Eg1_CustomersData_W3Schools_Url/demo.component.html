@@ -1,0 +1,20 @@
+h3Server Communication in Angular using HttpClienth3
+hr
+button (click)=getData()Get Databutton
+
+brbr
+
+table  border=2 cellpadding=5 cellspacing=0
+
+  tr
+    thCustomer Nameth
+    thCustomer Cityth
+    thCustomer Countryth
+  tr
+
+  tr ngFor=let customer of customersArray
+      td{{ customer.Name }}td
+      td{{ customer.City }}td
+      td{{ customer.Country }}td
+  tr
+table
